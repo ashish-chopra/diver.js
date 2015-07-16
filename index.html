@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Diver.js by raul1991</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Diver.js</h1>
+        <h2>Dives deep into the dom and dumps it in the object literal notation.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/raul1991/diver.js/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/raul1991/diver.js/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/raul1991/diver.js" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="diverjs" class="anchor" href="#diverjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>diver.js</h1>
+
+<p>Dives deep into the dom and dumps it in the object literal notation.</p>
+
+<h1>
+<a id="how-it-works-" class="anchor" href="#how-it-works-" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works ?</h1>
+
+<p>It works by accepting a root-node-id and an empty object. Now it traverses the complete tree and translates every leaf node having an id and a name into its corresponding object literal notation. The name of the leaf node would be translated into an object key and its value will be that key's value.</p>
+
+<h1>
+<a id="how-to-use-it-" class="anchor" href="#how-to-use-it-" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it ?</h1>
+
+<h3>
+<a id="include-the-script" class="anchor" href="#include-the-script" aria-hidden="true"><span class="octicon octicon-link"></span></a>Include the script</h3>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">&lt;</span>script type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>diver.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span>/script<span class="pl-k">&gt;</span></pre></div>
+
+<h3>
+<a id="example-html" class="anchor" href="#example-html" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Html</h3>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>container-top<span class="pl-pds">"</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">"</span>margin:10%<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>hide<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>step_one<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>form-horizontal control-group<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>step-one-one<span class="pl-pds">"</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">"</span>margin-left: -118px<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">label</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>control-label<span class="pl-pds">"</span></span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>inputName<span class="pl-pds">"</span></span>&gt;Name&lt;/<span class="pl-ent">label</span>&gt;
+
+            &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>controls<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>step-one-one-values<span class="pl-pds">"</span></span>&gt;
+                &lt;<span class="pl-ent">input</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>input_fat span2<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>inputName<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>first_name<span class="pl-pds">"</span></span> <span class="pl-e">group</span>=<span class="pl-s"><span class="pl-pds">"</span>personal_details<span class="pl-pds">"</span></span>
+                <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">"</span>First<span class="pl-pds">"</span></span>
+                      <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>cafebabe<span class="pl-pds">"</span></span>&gt;
+                &lt;<span class="pl-ent">input</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>input_fat span2<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>inputLastName<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>last_name<span class="pl-pds">"</span></span> <span class="pl-e">group</span>=<span class="pl-s"><span class="pl-pds">"</span>personal_details<span class="pl-pds">"</span></span> <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">"</span>Last<span class="pl-pds">"</span></span>
+                      <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>1991<span class="pl-pds">"</span></span>&gt;
+            &lt;/<span class="pl-ent">div</span>&gt;
+        &lt;/<span class="pl-ent">div</span>&gt;
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>form-horizontal control-group<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>step-one-two<span class="pl-pds">"</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">"</span>margin-left: -118px<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">label</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>control-label<span class="pl-pds">"</span></span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>inputAge<span class="pl-pds">"</span></span>&gt;Age&lt;/<span class="pl-ent">label</span>&gt;
+
+            &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>controls<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>step-one-two-values<span class="pl-pds">"</span></span>&gt;
+                &lt;<span class="pl-ent">input</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>input_fat span2<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>inputAge<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>age<span class="pl-pds">"</span></span> <span class="pl-e">group</span>=<span class="pl-s"><span class="pl-pds">"</span>personal_details<span class="pl-pds">"</span></span> <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">"</span>Age<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>21<span class="pl-pds">"</span></span>&gt;
+            &lt;/<span class="pl-ent">div</span>&gt;
+        &lt;/<span class="pl-ent">div</span>&gt;
+
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>form-horizontal control-group<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>step-one-four<span class="pl-pds">"</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">"</span>margin-left: -118px<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">label</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>control-label<span class="pl-pds">"</span></span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>inputEmail<span class="pl-pds">"</span></span>&gt;Email&lt;/<span class="pl-ent">label</span>&gt;
+
+            &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>controls<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>step-one-four-values<span class="pl-pds">"</span></span>&gt;
+                &lt;<span class="pl-ent">input</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>input_fat span3<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>inputEmail<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>email_id<span class="pl-pds">"</span></span> <span class="pl-e">group</span>=<span class="pl-s"><span class="pl-pds">"</span>personal_details<span class="pl-pds">"</span></span> <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">"</span>Email<span class="pl-pds">"</span></span>
+                      <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>bugville@nowhere.com<span class="pl-pds">"</span></span>&gt;
+            &lt;/<span class="pl-ent">div</span>&gt;
+        &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<h3>
+<a id="example-call-to-the-divers-function" class="anchor" href="#example-call-to-the-divers-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example call to the diver's function</h3>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> obj <span class="pl-k">=</span> traverse(<span class="pl-s"><span class="pl-pds">'</span>container-top<span class="pl-pds">'</span></span>,{});</pre></div>
+
+<h3>
+<a id="output" class="anchor" href="#output" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output</h3>
+
+<div class="highlight highlight-json"><pre>
+    {
+        <span class="pl-s"><span class="pl-pds">"</span>personal_details<span class="pl-pds">"</span></span>: {
+            <span class="pl-s"><span class="pl-pds">"</span>first_name<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Rahul<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>last_name<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Bawa<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>age<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>12<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>email_id<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>gogo@gmail.com<span class="pl-pds">"</span></span>
+        }
+    }
+
+</pre></div>
+
+<h3>
+<a id="restrictions" class="anchor" href="#restrictions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Restrictions</h3>
+
+<p>Expects id attribute for every child of the container passed to the diver.</p>
+
+<hr>
+
+<blockquote>
+<p>Keep watching the repository for more enhancements.</p>
+</blockquote>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
